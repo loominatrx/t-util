@@ -8,7 +8,7 @@ Notes:
    local table = require(game.ReplicatedStorage['t-util'])
    -- ...
    ```
-2. If you're not using Roblox Studio, you can `require` it without defining it.
+2. If you're making projects outside of Roblox, you can `require` it without defining it.
    ```lua
    require('./t-util')
    -- ...
