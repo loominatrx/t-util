@@ -1,9 +1,6 @@
 # t-util
-t-util is table utility for Lua and Luau (or Roblox Lua) that is created for making table manipulation much easier.
+t-util is table utility for Lua and Luau (or Roblox Lua) that is created to extend Lua's standard table library with additional methods for working with tables. Many of its methods come in the standard libraries for other languages.
 
-I created this module because I feel like Lua's table library is lack of something. I added around 20 methods that you can use for your projects.
-
-## Examples
 Notes:
 1. If you're using Roblox Studio, you need to define t-util as `table`, as Roblox don't let me wrap built-in objects using metatable.
    ```lua
@@ -19,9 +16,9 @@ Notes:
 
 ## Installation
 ### For Roblox Studio
-Paste this code in your command bar to get t-util, and then press Enter.
+Paste this code in your command bar to get t-util in your Roblox place, and then press Enter.
 ```lua
-local HttpService = game:GetService('HttpService'); HttpService.HttpEnabled = true; local source = HttpService:GetAsync(''); local script = Instance.new('ModuleScript'); script.Name = 't-util'; script.Source = source; script.Parent = game:GetService('ReplicatedStorage');
+local HttpService = game:GetService('HttpService'); HttpService.HttpEnabled = true; local source = HttpService:GetAsync('https://raw.githubusercontent.com/Loominagit/t-util/main/t-util.lua'); local script = Instance.new('ModuleScript'); script.Name = 't-util'; script.Source = source; script.Parent = game:GetService('ReplicatedStorage');
 ```
 It will create ModuleScript called `t-util` in `ReplicatedStorage`.
 ### For Lua projects
