@@ -41,7 +41,7 @@ local numArray = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100}
 print(table.randomIpair(numArray)) --> 60
 ```
 ```lua
--- Filters the scores for people who got 80 score
+-- Filters scores for people who get a score of 80
 require('./t-util')
 local scores = {Paul = 75, John = 70, Walker = 90, Bruce = 70, Clark = 69, Stark = 100, Steve = 85}
 local function filter(score)
