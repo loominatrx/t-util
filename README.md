@@ -11,7 +11,7 @@ It will create ModuleScript called `t-util` in `ReplicatedStorage`.
 ### For Lua projects
 You can download the source and put `t-util.lua` in your Lua projects, simple as that.
 
-Notes:
+## Notes
 1. If you're using Roblox Studio, you need to define t-util as `table`, as Roblox don't let me wrap built-in objects using metatable.
    ```lua
    -- You may replace the require path to where your t-util is located.
