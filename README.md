@@ -1,5 +1,5 @@
 # t-util
-t-util is table utility for Lua and Luau (or Roblox Lua) that is created by Loominatrx.
+t-util is table utility for Lua and Luau (or Roblox Lua) that is created for making table manipulation much easier.
 
 I created this module because I feel like Lua's table library is lack of something. I added around 20 methods that you can use for your projects.
 
