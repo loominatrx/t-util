@@ -8,6 +8,7 @@ local insert, remove, move = table.insert, table.remove, table.move
 local pack, unpack = table.pack, table.unpack
 local join = table.concat
 local random = math.random
+local foreach, foreachi = table.foreach, table.foreachi
 
 -- Luau's table references
 
@@ -295,19 +296,6 @@ function table.fill(tbl, value, start, End)
     return tbl
 end
 
--- Iterates through a table and executes `callback` function to every element.
-function table.foreach(tbl, callback)
-    if table.isEmpty(tbl) then error('`tbl` must not be empty!', 2) end
-    for key, value in pairs(tbl) do callback(value, key) end
-end
-
--- Iterates through a array-like table and executes `callback` function to every element.
-function table.foreachi(tbl, callback)
-    if table.isEmpty(tbl) then error('`tbl` cannot be empty!', 2) end
-    if table.isDictionary(tbl) then error('`tbl` can only accept array-like table!', 2) end
-    for key, value in ipairs(tbl) do callback(value, key) end
-end
-
 -- I don't wrap the methods using metatable, as Roblox don't let us wrap built-in objects
 -- and the table object (in Luau) is read-only, meaning we can't add/modify functions on it.
 if _VERSION ~= 'Luau' then
@@ -328,6 +316,8 @@ else
     table.move = move
     table.getn = getn -- deprecated in Lua 5.1, dunno why did they brought it to Luau.
                       -- but I reference it anyways for those who still uses `table.getn()` in 2021 (lol).
+    table.foreach = foreach
+    table.foreachi = foreachi
 
     table.clear = clear -- Luau exclusive.
     table.create = create -- Luau exclusive.
