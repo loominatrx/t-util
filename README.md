@@ -49,6 +49,15 @@ local function filter(score)
 end
 print(table.filter(scores, filter)) --> {Walker = 90, Stark = 100, Steve = 85}
 ```
+```lua
+-- Make a new copy of a table, then insert a new value to the new copy.
+require('./t-util')
+local people = {'Joe', 'Mama'}
+local cloned = table.copy(people)
+table.insert(cloned, 'Bob')
+print(people) --> {'Joe', 'Mama'}
+print(cloned) --> {'Joe', 'Mama', 'Bob'}
+```
 
 ## License
 This repository is released under MIT License.
