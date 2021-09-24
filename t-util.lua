@@ -28,28 +28,28 @@ end
 
 -- Returns the total number of the element in a table.
 function table.count(tbl)
-	local n = 0
-	for _ in pairs(tbl) do
-		n = n + 1
-	end
-	return n
+    local n = 0
+    for _ in pairs(tbl) do
+        n = n + 1
+    end
+    return n
 end
 
 -- Returns the total number of the element in a table recursively.
 function table.deepCount(tbl)
-	local n = 0
-	for _, v in pairs(tbl) do
-		n = type(v) == 'table' and n + table.deepcount(v) or n + 1
-	end
-	return n
+    local n = 0
+    for _, v in pairs(tbl) do
+        n = type(v) == 'table' and n + table.deepcount(v) or n + 1
+    end
+    return n
 end
 
 -- Determines whether the table contains a value, returning `true` or `false` as appropriate.
 function table.includes(tbl, value)
-	for _, v in next, tbl do
-		if v == value then return true end
-	end
-	return false
+    for _, v in next, tbl do
+        if v == value then return true end
+    end
+    return false
 end
 
 -- Determines if the `tbl` has `index` on it, returning `true` or `false` as appropriate.
@@ -88,11 +88,11 @@ end
 
 -- Returns a new copy of the table, one layer deep.
 function table.copy(tbl)
-	local ret = {}
-	for k, v in pairs(tbl) do
-		ret[k] = v
-	end
-	return ret
+    local ret = {}
+    for k, v in pairs(tbl) do
+        ret[k] = v
+    end
+    return ret
 end
 
 --[[
@@ -101,11 +101,11 @@ If a table is encountered, it is recursively deep-copied.
 Metatables are not copied.
 ]]
 function table.deepCopy(tbl)
-	local ret = {}
-	for k, v in pairs(tbl) do
-		ret[k] = type(v) == 'table' and table.deepcopy(v) or v
-	end
-	return ret
+    local ret = {}
+    for k, v in pairs(tbl) do
+        ret[k] = type(v) == 'table' and table.deepcopy(v) or v
+    end
+    return ret
 end
 
 -- Reverses the element of an array-like table in place.
@@ -116,9 +116,9 @@ function table.reverse(tbl)
         error('`tbl` must be a array-like table!', 2)
     end
 
-	for i = 1, #tbl do
-		insert(tbl, i, remove(tbl))
-	end
+    for i = 1, #tbl do
+        insert(tbl, i, remove(tbl))
+    end
 end
 
 -- Returns a copy of an array-like table with its element in reverse order.
@@ -130,67 +130,67 @@ function table.reversed(tbl)
         error('`tbl` must be a array-like table!', 2)
     end
 
-	local ret = {}
-	for i = #tbl, 1, -1 do
-		insert(ret, tbl[i])
-	end
-	return ret
+    local ret = {}
+    for i = #tbl, 1, -1 do
+        insert(ret, tbl[i])
+    end
+    return ret
 end
 
 -- Returns a new array-like table where all of its values are the keys of the original table.
 function table.keys(tbl)
-	local ret = {}
-	for k in pairs(tbl) do
-		insert(ret, k)
-	end
-	return ret
+    local ret = {}
+    for k in pairs(tbl) do
+        insert(ret, k)
+    end
+    return ret
 end
 
 -- Returns a new array-like table where all of its values are the values of the original table.
 function table.values(tbl)
-	local ret = {}
-	for _, v in pairs(tbl) do
-		insert(ret, v)
-	end
-	return ret
+    local ret = {}
+    for _, v in pairs(tbl) do
+        insert(ret, v)
+    end
+    return ret
 end
 
 -- Returns a random (index, value) pair from an array-like table.
 function table.randomIpair(tbl)
-	local i = random(#tbl)
-	return i, tbl[i]
+    local i = random(#tbl)
+    return i, tbl[i]
 end
 
 -- Returns a random (key, value) pair from a dictionary-like table.
 function table.randomPair(tbl)
-	local rand = random(table.count(tbl))
-	local n = 0
-	for k, v in pairs(tbl) do
-		n = n + 1
-		if n == rand then
-			return k, v
-		end
-	end
+    local rand = random(table.count(tbl))
+    local n = 0
+    for k, v in pairs(tbl) do
+        n = n + 1
+        if n == rand then
+            return k, v
+        end
+    end
 end
 
 -- Returns a copy of an array-like table sorted using Lua's `table.sort`.
 function table.sorted(tbl, fn)
-	local ret = {}
-	for i, v in ipairs(tbl) do
-		ret[i] = v
-	end
-	sort(ret, fn)
-	return ret
+    local ret = {}
+    for i, v in ipairs(tbl) do
+        ret[i] = v
+    end
+    sort(ret, fn)
+    return ret
 end
 
 -- Returns a new table that is a slice of the original, defined by the start and stop bounds and the step size.
 -- Default start, stop, and step values are 1, #tbl, and 1 respectively.
 function table.slice(tbl, start, stop, step)
-	local ret = {}
-	for i = start or 1, stop or #tbl, step or 1 do
-		insert(ret, tbl[i])
-	end
-	return ret
+    local ret = {}
+    for i = start or 1, stop or #tbl, step or 1 do
+        insert(ret, tbl[i])
+    end
+    return ret
 end
 -- Iterates through a table until a value satisfies the test function.
 -- The `value` is returned if it satisfies the test function. Otherwise, `nil` is returned.
