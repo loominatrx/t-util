@@ -40,7 +40,7 @@ end
 function table.deepCount(tbl)
     local n = 0
     for _, v in pairs(tbl) do
-        n = type(v) == 'table' and n + table.deepcount(v) or n + 1
+        n = type(v) == 'table' and n + table.deepCount(v) or n + 1
     end
     return n
 end
@@ -104,7 +104,7 @@ Metatables are not copied.
 function table.deepCopy(tbl)
     local ret = {}
     for k, v in pairs(tbl) do
-        ret[k] = type(v) == 'table' and table.deepcopy(v) or v
+        ret[k] = type(v) == 'table' and table.deepCopy(v) or v
     end
     return ret
 end
