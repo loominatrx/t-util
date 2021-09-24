@@ -1,5 +1,5 @@
 # t-util
-t-util is table utility for Lua and Luau (or Roblox Lua) that is created to extend Lua's standard table library with additional methods for working with tables. Many of its methods come in the standard libraries for other languages.
+t-util is table utility for [Lua](https://lua.org) and [Luau (or Roblox Lua)](https://luau-lang.org) that is created to extend Lua's standard table library with additional methods for working with tables. Many of its methods come in the standard libraries for other languages.
 
 Notes:
 1. If you're using Roblox Studio, you need to define t-util as `table`, as Roblox don't let me wrap built-in objects using metatable.
