@@ -291,6 +291,19 @@ function table.fill(tbl, value, start, End)
     return tbl
 end
 
+-- Returns a new copy of array-table and removes duplicate elements from the original array-like table.
+function table.removeDupes(tbl)
+    local hash = {}
+    local ret = {}
+    for _,v in ipairs(tbl) do
+        if not hash[v] then
+            table.insert(ret, v)
+            hash[v] = true
+        end
+    end
+    return ret
+end
+
 -- I don't wrap the methods using metatable, as Roblox don't let us wrap built-in objects
 -- and the table object (in Luau) is read-only, meaning we can't add/modify functions on it.
 if _VERSION ~= 'Luau' then
