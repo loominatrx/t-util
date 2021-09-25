@@ -1,4 +1,5 @@
-# ![t-util header](https://user-images.githubusercontent.com/35314624/134762002-4e8080bc-e0d6-4600-b84e-af0d99cfefd5.png)
+# ![t-util header](https://user-images.githubusercontent.com/35314624/134764530-afd76999-c665-4d1c-a86d-16d1394dbabd.png)
+
 t-util is table utility for [Lua](https://lua.org) and [Luau (or Roblox Lua)](https://luau-lang.org) that is created to extend Lua's standard table library with additional methods for working with tables. Many of its methods come in the standard libraries for other languages.
 
 ## Installation
@@ -59,7 +60,7 @@ print(people) --> {'Joe', 'Mama'}
 print(cloned) --> {'Joe', 'Mama', 'Bob'}
 ```
 
-# Methods
+## Methods
 If you're looking for t-util's additional methods, you may open [this link](https://github.com/Loominagit/t-util/wiki/Methods).
 
 ## License
