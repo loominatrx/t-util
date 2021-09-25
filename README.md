@@ -59,5 +59,8 @@ print(people) --> {'Joe', 'Mama'}
 print(cloned) --> {'Joe', 'Mama', 'Bob'}
 ```
 
+# Methods
+If you're looking for t-util's additional methods, you may open [this link](https://github.com/Loominagit/t-util/wiki/Methods).
+
 ## License
 This repository is released under MIT License.
