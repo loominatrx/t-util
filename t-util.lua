@@ -291,8 +291,14 @@ function table.fill(tbl, value, start, End)
     return tbl
 end
 
--- Returns a new copy of array-table and removes duplicate elements from the original array-like table.
+-- Returns a new copy of the original array-like table and removes duplicate elements that exists on that table.
 function table.removeDupes(tbl)
+    if table.isEmpty(tbl) then
+        error('`tbl` must not be empty!', 2)
+	elseif table.isDictionary(tbl) then
+	    error('`tbl` must be a array-like table!', 2)
+    end
+
     local hash = {}
     local ret = {}
     for _,v in ipairs(tbl) do
@@ -301,7 +307,8 @@ function table.removeDupes(tbl)
             hash[v] = true
         end
     end
-    return ret
+
+	return ret
 end
 
 -- I don't wrap the methods using metatable, as Roblox don't let us wrap built-in objects
