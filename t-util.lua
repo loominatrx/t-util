@@ -297,7 +297,7 @@ function table.removeDupes(tbl)
     local ret = {}
     for _,v in ipairs(tbl) do
         if not hash[v] then
-            table.insert(ret, v)
+            insert(ret, v)
             hash[v] = true
         end
     end
