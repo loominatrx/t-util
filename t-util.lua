@@ -5,8 +5,7 @@
 
 local sort = table.sort
 local insert, remove, move = table.insert, table.remove, table.move
-local pack, unpack = table.pack, table.unpack
-local join = table.concat
+local pack, unpack, concat = table.pack, table.unpack, table.concat
 local random = math.random
 local foreach, foreachi = table.foreach, table.foreachi
 
@@ -58,7 +57,7 @@ function table.has(tbl, index)
     return tbl[index] ~= nil
 end
 
--- Determines if the table is not empty. Returns `true` or `false`, as appropriate.
+-- Determines if the table is empty. Returns `true` or `false`, as appropriate.
 function table.isEmpty(tbl)
     return next(tbl) == nil
 end
@@ -193,6 +192,7 @@ function table.slice(tbl, start, stop, step)
     end
     return ret
 end
+
 -- Iterates through a table until a value satisfies the test function.
 -- The `value` is returned if it satisfies the test function. Otherwise, `nil` is returned.
 function table.findValue(tbl, testFn)
@@ -249,7 +249,7 @@ function table.every(tbl, testFn)
 end
 
 -- Returns a new table that is this table joined with other table(s).
-function table.concatTable(...)
+function table.merge(...)
     local ret = {}
     local tables = {...}
     
@@ -269,11 +269,6 @@ function table.concatTable(...)
 
     return ret
 end
-table.merge = table.concatTable
-
--- Joins all elements of an array-like table into a string.
--- Internally calls vanilla `table.concat` function.
-table.join = join
 
 -- Changes all elements in an array-like table to a static value
 -- from start index (default: `1`) to an end index (default: `#tbl`).
@@ -318,6 +313,7 @@ else
                       -- but I reference it anyways for those who still uses `table.getn()` in 2021 (lol).
     table.foreach = foreach
     table.foreachi = foreachi
+	table.concat = concat
 
     table.clear = clear -- Luau exclusive.
     table.create = create -- Luau exclusive.
