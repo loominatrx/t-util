@@ -313,7 +313,7 @@ else
                       -- but I reference it anyways for those who still uses `table.getn()` in 2021 (lol).
     table.foreach = foreach
     table.foreachi = foreachi
-	table.concat = concat
+    table.concat = concat
 
     table.clear = clear -- Luau exclusive.
     table.create = create -- Luau exclusive.
