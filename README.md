@@ -1,5 +1,4 @@
-![t-util_underline](https://user-images.githubusercontent.com/35314624/134761618-6195fa52-5bf3-4e7b-9b3b-b8d8b212b5d9.png)
-
+# ![t-util header](https://user-images.githubusercontent.com/35314624/134762002-4e8080bc-e0d6-4600-b84e-af0d99cfefd5.png)
 t-util is table utility for [Lua](https://lua.org) and [Luau (or Roblox Lua)](https://luau-lang.org) that is created to extend Lua's standard table library with additional methods for working with tables. Many of its methods come in the standard libraries for other languages.
 
 ## Installation
