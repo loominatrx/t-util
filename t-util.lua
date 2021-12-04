@@ -2,7 +2,6 @@
 -- Compatible with Luau and Vanilla Lua.
 
 -- Lua's table references
-
 local sort = table.sort
 local insert, remove, move = table.insert, table.remove, table.move
 local pack, unpack, concat = table.pack, table.unpack, table.concat
@@ -10,7 +9,6 @@ local random = math.random
 local foreach, foreachi = table.foreach, table.foreachi
 
 -- Luau's table references
-
 local tfind = table.find
 local getn, create = table.getn, table.create
 local clear = table.clear
@@ -19,7 +17,6 @@ local clear = table.clear
 local table = {}
 
 -- Private methods
-
 local function tableCheck(v)
     return type(v) == 'table'
 end
@@ -322,7 +319,6 @@ if _VERSION ~= 'Luau' then
     })
 else
     -- Had to reference all of the built-ins due to Roblox's restrictions.
-
     table.insert = insert
     table.remove = remove
     table.sort = sort
@@ -335,9 +331,9 @@ else
     table.foreachi = foreachi
     table.concat = concat
 
-    table.clear = clear -- Luau exclusive.
-    table.create = create -- Luau exclusive.
-    table.find = tfind -- Luau exclusive.
+    table.clear = clear
+    table.create = create
+    table.find = tfind
 
     return setmetatable(table, {
         __newindex = function()
