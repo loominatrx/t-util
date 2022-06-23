@@ -206,7 +206,7 @@ end
 function table.findIndex(tbl, testFn)
     for key, value in pairs(tbl) do
         if testFn(value, key) == true then
-            return value
+            return key
         end
     end
     return nil
